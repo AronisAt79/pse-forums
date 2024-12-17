@@ -382,7 +382,7 @@ pub(crate) async fn admin_post(
 impl Default for SiteConfig {
     fn default() -> Self {
         SiteConfig {
-            site_name: "freedit".into(),
+            site_name: "PseForumPoC".into(),
             domain: "http://127.0.0.1:3001".into(),
             description: "a forum powered by rust".into(),
             read_only: false,
