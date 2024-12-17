@@ -384,7 +384,7 @@ impl Default for SiteConfig {
         SiteConfig {
             site_name: "PseForumsPoC".into(),
             domain: "http://127.0.0.1:3001".into(),
-            description: "a forum powered by rust".into(),
+            description: "AN UGLY FORUM POWERED BY RUST".into(),
             read_only: false,
             inn_mod_max: 5,
             title_max_length: 100,
