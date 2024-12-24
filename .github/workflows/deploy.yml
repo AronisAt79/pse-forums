@@ -4,10 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       projectname:
+        description: This is the ProjectName tag attached to all associated resources
         required: true
         default: 'pse-forums'
         type: string
       instancename:
+        description: "to be added. parameter will be probably converted to choice"
         required: true
         default: 'pse-forums-workflows-poc'
         type: string
