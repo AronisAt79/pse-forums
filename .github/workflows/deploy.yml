@@ -2,6 +2,12 @@ name: DEPLOY
 
 on:
   workflow_dispatch:
+    inputs:
+      projectname:
+        required: true
+        default: 'pseforums'
+        type: string
+
   # push:
   #   branches:
   #     - main
