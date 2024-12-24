@@ -22,7 +22,7 @@ jobs:
 
       - name: main test
         run: |
-          instances=`aws ec2 describe-insatnces`;
+          instances=`aws ec2 describe-instances`;
           echo $instances
 
 
