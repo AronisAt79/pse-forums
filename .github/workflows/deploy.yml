@@ -38,7 +38,7 @@ jobs:
 
       - name: main test
         run: |
-          ./.github/scripts/get-instances.sh $PROJECT_NAME
+          ./.github/scripts/get-instances.sh ${{ env.PROJECT_NAME }}
 
 
     
