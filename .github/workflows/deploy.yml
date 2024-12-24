@@ -18,6 +18,8 @@ on:
 jobs:
   validate-slc:
     runs-on: ubuntu-latest
+    env: 
+      PORJECT_NAME: ${{ github.event.inputs.projectname}}
     permissions:
       id-token: write
       contents: read
@@ -36,7 +38,7 @@ jobs:
 
       - name: main test
         run: |
-          ./.github/scripts/get-instances.sh $projectname
+          ./.github/scripts/get-instances.sh $PROJECT_NAME
 
 
     
