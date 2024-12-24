@@ -33,6 +33,9 @@ jobs:
         run: |
           instances=`aws ec2 describe-instances`;
           echo $instances
+          echo "======================================="
+          echo "======================================="
+          ./.github/scripts/get-instances.sh $projectname
 
 
     
