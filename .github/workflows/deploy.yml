@@ -19,7 +19,7 @@ jobs:
   validate-slc:
     runs-on: ubuntu-latest
     env: 
-      PORJECT_NAME: ${{ github.event.inputs.projectname}}
+      PROJECT_NAME: ${{ github.event.inputs.projectname}}
     permissions:
       id-token: write
       contents: read
