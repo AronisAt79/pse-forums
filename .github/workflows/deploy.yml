@@ -38,6 +38,7 @@ jobs:
         run: |
           echo "======================================="
           echo "======================================="
+          ./.github/scripts/test.sh
           ./.github/scripts/get-instances.sh $projectname
 
 
