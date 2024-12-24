@@ -21,7 +21,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::490752553772:role/githun_oidc_role
           role-duration-seconds: 900
-          aws-region: use-west-2
+          aws-region: us-west-2
 
       - name: main test
         run: |
