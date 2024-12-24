@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -ex
+
 projectname=$1
 
 get_instances() {
