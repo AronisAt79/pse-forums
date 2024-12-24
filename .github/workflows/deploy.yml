@@ -38,6 +38,7 @@ jobs:
 
       - name: main test
         run: |
+          echo ${{ env.PROJECT_NAME }}
           ./.github/scripts/get-instances.sh ${{ env.PROJECT_NAME }}
 
 
