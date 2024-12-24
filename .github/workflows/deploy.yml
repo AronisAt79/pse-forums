@@ -7,6 +7,10 @@ on:
         required: true
         default: 'pse-forums'
         type: string
+      instancename:
+        required: true
+        default: 'pse-forums-workflows-poc'
+        type: string
 
   # push:
   #   branches:
@@ -20,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       PROJECT_NAME: ${{ github.event.inputs.projectname}}
+      INSTANCE_NAME: ${{ github.event.inputs.instancename}}
     permissions:
       id-token: write
       contents: read
@@ -39,7 +44,7 @@ jobs:
       - name: main test
         run: |
           echo ${{ env.PROJECT_NAME }}
-          ./.github/scripts/get-instances.sh ${{ env.PROJECT_NAME }}
+          ./.github/scripts/get-instances.sh ${{ env.PROJECT_NAME }} ${{ env.INSTANCE_NAME }}
 
 
     
