@@ -9,3 +9,5 @@ get_instances() {
     
     echo $instances   
 }
+
+get_instances
