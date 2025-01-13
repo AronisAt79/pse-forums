@@ -4,11 +4,12 @@ set -e
 
 projectname=$1
 instancename=$2
-release_tag=$3
+region=$3
+release_tag=$4
 
 get_instances() {
     instances=`aws ec2 describe-instances \
-        --region "us-west-2" \
+        --region "$region" \
         --filters "Name=tag:ProjectName,Values=$projectname" \
         --filters "Name=tag:Name,Values=$instancename" \
         --query "Reservations[].Instances[].{ID:InstanceId, NAME:Tags[?Key=='Name']|[0].Value,STATE:State}" \

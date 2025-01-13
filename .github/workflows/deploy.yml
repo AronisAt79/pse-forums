@@ -13,6 +13,11 @@ on:
         required: true
         default: 'pse-forums-workflows-poc'
         type: string
+      region:
+        description: "deployment region"
+        required: true
+        default: 'us-west-2'
+        type: string
 
   # push:
   #   branches:
@@ -27,6 +32,7 @@ jobs:
     env: 
       PROJECT_NAME: ${{ github.event.inputs.projectname}}
       INSTANCE_NAME: ${{ github.event.inputs.instancename}}
+      AWS_REGION: ${{ github.event.inputs.region}}
     permissions:
       id-token: write
       contents: read
@@ -41,12 +47,12 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::490752553772:role/github_oidc_role
           role-duration-seconds: 900
-          aws-region: us-west-2
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: main test
         run: |
           echo ${{ env.PROJECT_NAME }}
-          ./.github/scripts/get-instances.sh ${{ env.PROJECT_NAME }} ${{ env.INSTANCE_NAME }}
+          ./.github/scripts/get-instances.sh ${{ env.PROJECT_NAME }} ${{ env.INSTANCE_NAME }} ${{ env.AWS_REGION }}
 
 
     
